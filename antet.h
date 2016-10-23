@@ -8,20 +8,24 @@
 #include <ctype.h> //int toupper(int c);
 
 /**
-    Antetul filei pentru file cu .c si .h
+   1. Antetul filei pentru file cu .c si .h
 */
 void antet(char *fnc, char *fnh);
 /**
-    Create file README.md for github repository
+   2. Create file README.md for github repository
 */
 int readme(void);
 /**
-    Makefile create for run with utility Make
+    3. Makefile create for run with utility Make
 */
 int makefile(void);
 /**
-    Functia ruleaza programul din aceasta fila
+   4. Functia ruleaza programul din aceasta fila
 */
 int run(void);
+/**
+    5. Convert file name to FILE
+*/
+void convertToUpperCase(char *sPtr);
 
 #endif // ANTET_H_INCLUDED

@@ -6,7 +6,6 @@ void antet(char *fnc, char *fnh)
     time_t curtime;
 
     const char search[3] = ".h";
-    char *token;
 
     time(&curtime);
 
@@ -23,23 +22,31 @@ void antet(char *fnc, char *fnh)
     fprintf(fph,"  Util\t: \n");
     fprintf(fph,"=========================================================*/\n\n");
 
-    token = strtok(fnh, search);
+    //token = strtok(fnh, search);
 //    while(token != NULL){
 //        printf("Return first token: %s\n", token);
 //        token = strtok(NULL, search);
 //    }
 
-    char *upperCase;
-    int i=0;
-    while(token[i]){
-        putchar( toupper(token[i]));
+    char upperCase[21];
+    strcpy(upperCase, fnh);
+    convertToUpperCase(&upperCase);
+
+    char *token = strtok(upperCase, ".H");
+
+    while(token){
+        printf("TOKEN: %s\n", token);
+        //upperCase = token;
+        //putchar( toupper(token[i]));
         //strcat(upperCase, toupper(token[i]));
-        i++;
+        token=strtok(NULL, " .H");
     }
+
+
     printf("UPPER_CASE: %s.\n", upperCase);
 
-    fprintf(fph,"#ifndef FILEC_H_INCLUDED\n");
-    fprintf(fph,"#define FILEC_H_INCLUDED\n\n");
+    fprintf(fph,"#ifndef %s_H_INCLUDED\n", upperCase);
+    fprintf(fph,"#define %s_H_INCLUDED\n\n", upperCase);
 
     fprintf(fph, "#include <errno.h>\n");
     fprintf(fph, "#include <stdio.h>\n");
@@ -69,6 +76,14 @@ void antet(char *fnc, char *fnh)
     fclose(fpc);
 }
 
+void convertToUpperCase(char *sPtr)
+{
+    while(*sPtr != '\0'){
+        *sPtr = toupper((unsigned char) *sPtr);
+        ++sPtr;
+    }
+}
+
 int makefile(void)
 {
     char fmake[21] = "Makefile";
@@ -79,7 +94,7 @@ int makefile(void)
         return EXIT_FAILURE;
     }
     fprintf(fp,"runantet: main.c antet.c \n");
-    fprintf(fp,"    gcc -o runantet main.c antet.c -I.");
+    fprintf(fp,"\tgcc -o runantet main.c antet.c -I.");
 
     printf("SUCCESS: file %s create.\n", fmake);
     fclose(fp);
@@ -105,18 +120,18 @@ int readme(void)
 
     fprintf(fp,"###Prerequisites \n");
     fprintf(fp,"What things you need to install the software and how to install them.\n");
-    fprintf(fp, "''' Give Example '''\n");
+    fprintf(fp, "``` Give Example ```\n");
 
     fprintf(fp, "###Instalation \n");
     fprintf(fp, "A step by step series of examples that tell you have to get a development env running.\n");
-    fprintf(fp, " ''' \n");
+    fprintf(fp, " ``` \n");
     fprintf(fp, " Give example \n");
-    fprintf(fp, " ''' \n");
+    fprintf(fp, " ``` \n");
 
     fprintf(fp, "##Code Example \n");
-    fprintf(fp, " '''C \n");
+    fprintf(fp, " ```C \n");
     fprintf(fp, " Give example \n");
-    fprintf(fp, " ''' \n");
+    fprintf(fp, " ``` \n");
 
     fprintf(fp, "##Build Width \n");
     fprintf(fp, "* [Code::Blocks](http://www.codeblocks.org/) - The framework used.\n");

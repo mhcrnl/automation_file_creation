@@ -11,7 +11,7 @@ You need the files : antet.c and antet.h. In main.c of the program run:
 ###Prerequisites 
 What things you need to install the software and how to install them.
 
-* You can Fork on [GitHub](https://github.com/mhcrnl/automation_file_creation.git] an create your personal repository.
+* You can Fork on [GitHub](https://github.com/mhcrnl/automation_file_creation.git) an create your personal repository.
 
 * Second: you can clone in your personal folder width comand: 
 ```git clone https://github.com/mhcrnl/automation_file_creation.git```

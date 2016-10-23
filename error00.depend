@@ -24,3 +24,27 @@
 	<time.h>
 	<ctype.h>
 
+1477230291 source:/home/mhcrnl/Desktop/Year2016/October/automation_file_creation/filec.c
+	"filec.h"
+
+1477230291 /home/mhcrnl/Desktop/Year2016/October/automation_file_creation/filec.h
+	<errno.h>
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+
+1477230291 source:/home/mhcrnl/Desktop/Year2016/October/automation_file_creation/main.c
+	<stdio.h>
+	<stdlib.h>
+	"antet.h"
+
+1477232469 /home/mhcrnl/Desktop/Year2016/October/automation_file_creation/antet.h
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	<time.h>
+	<ctype.h>
+
+1477230613 source:/home/mhcrnl/Desktop/Year2016/October/automation_file_creation/antet.c
+	"antet.h"
+
