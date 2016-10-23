@@ -1,0 +1,26 @@
+# depslib dependency file v1.0
+1477158432 source:/home/mhcrnl/Documents/Year2016/October/gnuClib/error/error00/filec.c
+	"filec.h"
+
+1477158623 /home/mhcrnl/Documents/Year2016/October/gnuClib/error/error00/filec.h
+	<errno.h>
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+
+1477198682 source:/home/mhcrnl/Documents/Year2016/October/gnuClib/error/error00/main.c
+	<stdio.h>
+	<stdlib.h>
+	"filec.h"
+	"antet.h"
+
+1477205429 source:/home/mhcrnl/Documents/Year2016/October/gnuClib/error/error00/antet.c
+	"antet.h"
+
+1477204119 /home/mhcrnl/Documents/Year2016/October/gnuClib/error/error00/antet.h
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	<time.h>
+	<ctype.h>
+
