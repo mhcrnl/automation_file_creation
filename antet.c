@@ -33,7 +33,7 @@ void antet(char *fnc, char *fnh)
     int i=0;
     while(token[i]){
         putchar( toupper(token[i]));
-        strcat(upperCase, toupper(token[i]));
+        //strcat(upperCase, toupper(token[i]));
         i++;
     }
     printf("UPPER_CASE: %s.\n", upperCase);
@@ -67,6 +67,23 @@ void antet(char *fnc, char *fnh)
     fprintf(fph, "#include \"%s\" \n", fnh);
 
     fclose(fpc);
+}
+
+int makefile(void)
+{
+    char fmake[21] = "Makefile";
+    FILE *fp;
+
+    if((fp=fopen(fmake, "w")) == NULL){
+        printf("File: %s.\n", fmake);
+        return EXIT_FAILURE;
+    }
+    fprintf(fp,"runantet: main.c antet.c \n");
+    fprintf(fp,"    gcc -o runantet main.c antet.c -I.");
+
+    printf("SUCCESS: file %s create.\n", fmake);
+    fclose(fp);
+    return EXIT_SUCCESS;
 }
 
 int readme(void)
@@ -126,13 +143,39 @@ int readme(void)
 
 int run(void)
 {
+    int optiune;
     char fnc[20];
     char fnh[20];
 
-    puts("Introduce-ti numele fisierului cu extensia c(filename.c): ");
-    scanf("%s", fnc);
-    puts("Introduce-ti numele fisierului cu extensia h(filename.h): ");
-    scanf("%s", fnh);
-    antet(fnc, fnh);
+    puts("Salut!, from automation_file_cration.");
+    do{
+        puts("\t\t\t MENIU ");
+        puts("\t1.\tCreate filename.c and filename.h.");
+        puts("\t2.\tCreate file README.md.");
+        puts("\t3.\tCreate file Makefile.");
+
+        puts("\t5.\tEXIT.");
+        puts("Insert your option:");
+        scanf("%d", &optiune);
+        switch(optiune){
+            case 1:
+                puts("Introduce-ti numele fisierului cu extensia c(filename.c): ");
+                scanf("%s", fnc);
+                puts("Introduce-ti numele fisierului cu extensia h(filename.h): ");
+                scanf("%s", fnh);
+                antet(fnc, fnh);
+                break;
+            case 2:
+                readme();
+                break;
+            case 3:
+                makefile();
+                break;
+
+            case 5:
+                printf("Number of line code writen in program: %d", __LINE__);
+                exit(0);
+        }
+    }while(1);
     return(EXIT_SUCCESS);
 }

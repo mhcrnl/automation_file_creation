@@ -16,6 +16,10 @@ void antet(char *fnc, char *fnh);
 */
 int readme(void);
 /**
+    Makefile create for run with utility Make
+*/
+int makefile(void);
+/**
     Functia ruleaza programul din aceasta fila
 */
 int run(void);
